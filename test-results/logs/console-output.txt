@@ -1,0 +1,166 @@
+PS E:\streamhub-qa-automation-assessment> npm test
+
+> streamhub-qa-automation-assessment@1.0.0 test
+> cucumber-js --format progress --format json:test-results/cucumber-report.json
+
+◇ injected env (3) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+.F---..F----..F---..F---..F---..F---..F---..F-----......F-....F----.
+
+Failures:
+
+1) Scenario: Health endpoint returns service status # features\api.feature:9
+   √ Before # features\support\world.js:30
+   × Given the assessment API is available # features\steps\api.steps.js:4
+       apiRequestContext.get: connect ECONNREFUSED 127.0.0.1:3000
+       Call log:
+         - → GET http://127.0.0.1:3000/api/health
+           - user-agent: Playwright/1.63.0 (x64; windows 10.0) node/24.21
+           - accept: application/json
+           - accept-encoding: gzip,deflate,br
+       
+           at CustomWorld.<anonymous> (E:\streamhub-qa-automation-assessment\features\steps\api.steps.js:5:35)
+   - When I request the health endpoint # features\steps\api.steps.js:9
+   - Then the response status should be 200 # features\steps\api.steps.js:42
+   - And the response field "status" should be "UP" # features\steps\api.steps.js:46
+   √ After # features\support\world.js:37
+
+2) Scenario: Get products with filtering sorting and pagination # features\api.feature:14
+   √ Before # features\support\world.js:30
+   × Given the assessment API is available # features\steps\api.steps.js:4
+       apiRequestContext.get: connect ECONNREFUSED 127.0.0.1:3000
+       Call log:
+         - → GET http://127.0.0.1:3000/api/health
+           - user-agent: Playwright/1.63.0 (x64; windows 10.0) node/24.21
+           - accept: application/json
+           - accept-encoding: gzip,deflate,br
+       
+           at CustomWorld.<anonymous> (E:\streamhub-qa-automation-assessment\features\steps\api.steps.js:5:35)
+   - When I request products with category "electronics", sort "price_asc", page 1 and limit 2 # features\steps\api.steps.js:14
+   - Then the response status should be 200 # features\steps\api.steps.js:42
+   - And the response should contain 2 products # features\steps\api.steps.js:50
+   - And the response products should be sorted by ascending price # features\steps\api.steps.js:54
+   √ After # features\support\world.js:37
+
+3) Scenario: Search products by name # features\api.feature:20
+   √ Before # features\support\world.js:30
+   × Given the assessment API is available # features\steps\api.steps.js:4
+       apiRequestContext.get: connect ECONNREFUSED 127.0.0.1:3000
+       Call log:
+         - → GET http://127.0.0.1:3000/api/health
+           - user-agent: Playwright/1.63.0 (x64; windows 10.0) node/24.21
+           - accept: application/json
+           - accept-encoding: gzip,deflate,br
+       
+           at CustomWorld.<anonymous> (E:\streamhub-qa-automation-assessment\features\steps\api.steps.js:5:35)
+   - When I search products for "phone" # features\steps\api.steps.js:21
+   - Then the response status should be 200 # features\steps\api.steps.js:42
+   - And every returned product should match the search term # features\steps\api.steps.js:59
+   √ After # features\support\world.js:37
+
+4) Scenario: Get a product by id # features\api.feature:25
+   √ Before # features\support\world.js:30
+   × Given the assessment API is available # features\steps\api.steps.js:4
+       apiRequestContext.get: connect ECONNREFUSED 127.0.0.1:3000
+       Call log:
+         - → GET http://127.0.0.1:3000/api/health
+           - user-agent: Playwright/1.63.0 (x64; windows 10.0) node/24.21
+           - accept: application/json
+           - accept-encoding: gzip,deflate,br
+       
+           at CustomWorld.<anonymous> (E:\streamhub-qa-automation-assessment\features\steps\api.steps.js:5:35)
+   - When I request product id 2 # features\steps\api.steps.js:27
+   - Then the response status should be 200 # features\steps\api.steps.js:42
+   - And the product id should be 2 # features\steps\api.steps.js:67
+   √ After # features\support\world.js:37
+
+5) Scenario: Unknown product returns 404 # features\api.feature:30
+   √ Before # features\support\world.js:30
+   × Given the assessment API is available # features\steps\api.steps.js:4
+       apiRequestContext.get: connect ECONNREFUSED 127.0.0.1:3000
+       Call log:
+         - → GET http://127.0.0.1:3000/api/health
+           - user-agent: Playwright/1.63.0 (x64; windows 10.0) node/24.21
+           - accept: application/json
+           - accept-encoding: gzip,deflate,br
+       
+           at CustomWorld.<anonymous> (E:\streamhub-qa-automation-assessment\features\steps\api.steps.js:5:35)
+   - When I request product id 999 # features\steps\api.steps.js:27
+   - Then the response status should be 404 # features\steps\api.steps.js:42
+   - And the response field "error" should be "Product not found" # features\steps\api.steps.js:46
+   √ After # features\support\world.js:37
+
+6) Scenario: Invalid page parameter returns 400 # features\api.feature:35
+   √ Before # features\support\world.js:30
+   × Given the assessment API is available # features\steps\api.steps.js:4
+       apiRequestContext.get: connect ECONNREFUSED 127.0.0.1:3000
+       Call log:
+         - → GET http://127.0.0.1:3000/api/health
+           - user-agent: Playwright/1.63.0 (x64; windows 10.0) node/24.21
+           - accept: application/json
+           - accept-encoding: gzip,deflate,br
+       
+           at CustomWorld.<anonymous> (E:\streamhub-qa-automation-assessment\features\steps\api.steps.js:5:35)
+   - When I request products with page 0 # features\steps\api.steps.js:32
+   - Then the response status should be 400 # features\steps\api.steps.js:42
+   - And the response should contain an error message # features\steps\api.steps.js:71
+   √ After # features\support\world.js:37
+
+7) Scenario: Unsupported sort parameter returns 400 # features\api.feature:40
+   √ Before # features\support\world.js:30
+   × Given the assessment API is available # features\steps\api.steps.js:4
+       apiRequestContext.get: connect ECONNREFUSED 127.0.0.1:3000
+       Call log:
+         - → GET http://127.0.0.1:3000/api/health
+           - user-agent: Playwright/1.63.0 (x64; windows 10.0) node/24.21
+           - accept: application/json
+           - accept-encoding: gzip,deflate,br
+       
+           at CustomWorld.<anonymous> (E:\streamhub-qa-automation-assessment\features\steps\api.steps.js:5:35)
+   - When I request products with sort "random_sort" # features\steps\api.steps.js:37
+   - Then the response status should be 400 # features\steps\api.steps.js:42
+   - And the response should contain an error message # features\steps\api.steps.js:71
+   √ After # features\support\world.js:37
+
+8) Scenario: Validate Home Loan EMI pie chart # features\emi.feature:16
+   √ Before # features\support\world.js:30
+   × Given I open the EMI calculator # features\steps\emi.steps.js:12
+       Error: function timed out, ensure the promise resolves within 5000 milliseconds
+           at Timeout.<anonymous> (E:\streamhub-qa-automation-assessment\node_modules\@cucumber\cucumber\lib\time.js:64:20)
+           at listOnTimeout (node:internal/timers:685:17)
+           at process.processTimers (node:internal/timers:618:7)
+   - When I select the "Home Loan" tab # features\steps\emi.steps.js:19
+   - And I enter home loan amount "2500000", interest rate "10" and tenure "10" years # features\steps\emi.steps.js:23
+   - Then the displayed EMI should match my independently calculated EMI within 2 rupees # features\steps\emi.steps.js:31
+   - And the EMI pie chart should be visible # features\steps\emi.steps.js:37
+   - And both pie chart values should be greater than zero # features\steps\emi.steps.js:43
+   √ After # features\support\world.js:37
+
+9) Scenario: Validate Home Loan EMI pie chart # features\emi.feature:17
+   √ Before # features\support\world.js:30
+   √ Given I open the EMI calculator # features\steps\emi.steps.js:12
+   √ When I select the "Home Loan" tab # features\steps\emi.steps.js:19
+   √ And I enter home loan amount "5000000", interest rate "7.5" and tenure "15" years # features\steps\emi.steps.js:23
+   √ Then the displayed EMI should match my independently calculated EMI within 2 rupees # features\steps\emi.steps.js:31
+   × And the EMI pie chart should be visible # features\steps\emi.steps.js:37
+       TypeError: canvas.count is not a function
+           at CustomWorld.<anonymous> (E:\streamhub-qa-automation-assessment\features\steps\emi.steps.js:39:26)
+   - And both pie chart values should be greater than zero # features\steps\emi.steps.js:43
+   √ After # features\support\world.js:37
+
+10) Scenario: Validate Personal Loan EMI bar chart # features\emi.feature:19
+    √ Before # features\support\world.js:30
+    √ Given I open the EMI calculator # features\steps\emi.steps.js:12
+    √ When I select the "Personal Loan" tab # features\steps\emi.steps.js:19
+    × And I set personal loan amount to 1000000, interest rate to 12 and tenure to 5 years # features\steps\emi.steps.js:49
+        Error: Unable to locate input for Home Loan Amount
+            at EmiPage.setInputNearLabel (E:\streamhub-qa-automation-assessment\features\pages\emi.page.js:44:11)
+            at async EmiPage.setLoanAmount (E:\streamhub-qa-automation-assessment\features\pages\emi.page.js:48:5)
+            at async CustomWorld.<anonymous> (E:\streamhub-qa-automation-assessment\features\steps\emi.steps.js:51:3)
+    - And I modify the schedule start month # features\steps\emi.steps.js:57
+    - Then the EMI bar chart should be visible # features\steps\emi.steps.js:69
+    - And the EMI bar chart should contain at least one bar # features\steps\emi.steps.js:74
+    - And a bar tooltip should contain a positive numeric value # features\steps\emi.steps.js:78
+    √ After # features\support\world.js:37
+
+10 scenarios (10 failed)
+48 steps (10 failed, 32 skipped, 6 passed)

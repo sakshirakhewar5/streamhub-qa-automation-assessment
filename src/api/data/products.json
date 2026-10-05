@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "category": "electronics",
+    "price": 799
+  },
+  {
+    "id": 2,
+    "name": "Mechanical Keyboard",
+    "category": "electronics",
+    "price": 2499
+  },
+  {
+    "id": 3,
+    "name": "USB-C Hub",
+    "category": "electronics",
+    "price": 1499
+  },
+  {
+    "id": 4,
+    "name": "Notebook",
+    "category": "stationery",
+    "price": 199
+  },
+  {
+    "id": 5,
+    "name": "Water Bottle",
+    "category": "lifestyle",
+    "price": 599
+  },
+  {
+    "id": 6,
+    "name": "Laptop Stand",
+    "category": "electronics",
+    "price": 1899
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "streamhub-qa-automation-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Streamhub Fullstack + QA Automation Assessment - Section B",
+  "scripts": {
+    "api:start": "node src/api/server.js",
+    "test": "cucumber-js --format progress --format json:test-results/cucumber-report.json",
+    "test:headed": "HEADLESS=false cucumber-js --format progress --format json:test-results/cucumber-report.json",
+    "test:api": "cucumber-js features/api.feature --format progress --format json:test-results/api-report.json",
+    "test:emi": "cucumber-js features/emi.feature --format progress --format json:test-results/emi-report.json",
+    "lint": "node --check src/api/server.js && node --check features/steps/api.steps.js && node --check features/steps/emi.steps.js",
+    "posttest": "echo Test artifacts are available under test-results/"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.55.0",
+    "dotenv": "^17.2.2"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

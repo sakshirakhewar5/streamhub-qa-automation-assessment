@@ -1,0 +1,921 @@
+[
+  {
+    "description": "  As a QA engineer\n  I want to validate the assessment API\n  So that valid and invalid requests return the correct status and response shape",
+    "elements": [
+      {
+        "description": "",
+        "id": "assessment-api;health-endpoint-returns-service-status",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Health endpoint returns service status",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 23725899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the assessment API is available",
+            "match": {
+              "location": "features\\steps\\api.steps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28015499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I request the health endpoint",
+            "match": {
+              "location": "features\\steps\\api.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8677800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "the response status should be 200",
+            "match": {
+              "location": "features\\steps\\api.steps.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 417600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "the response field \"status\" should be \"UP\"",
+            "match": {
+              "location": "features\\steps\\api.steps.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 486800
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3067399
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "assessment-api;get-products-with-filtering-sorting-and-pagination",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Get products with filtering sorting and pagination",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2583300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the assessment API is available",
+            "match": {
+              "location": "features\\steps\\api.steps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7996300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I request products with category \"electronics\", sort \"price_asc\", page 1 and limit 2",
+            "match": {
+              "location": "features\\steps\\api.steps.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15365799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "the response status should be 200",
+            "match": {
+              "location": "features\\steps\\api.steps.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 272799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "the response should contain 2 products",
+            "match": {
+              "location": "features\\steps\\api.steps.js:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 245899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the response products should be sorted by ascending price",
+            "match": {
+              "location": "features\\steps\\api.steps.js:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1164499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1319099
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "assessment-api;search-products-by-name",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "Search products by name",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1215400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the assessment API is available",
+            "match": {
+              "location": "features\\steps\\api.steps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9284499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "I search products for \"phone\"",
+            "match": {
+              "location": "features\\steps\\api.steps.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4198900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "the response status should be 200",
+            "match": {
+              "location": "features\\steps\\api.steps.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 137400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "every returned product should match the search term",
+            "match": {
+              "location": "features\\steps\\api.steps.js:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1503899
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "assessment-api;get-a-product-by-id",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "Get a product by id",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2042300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the assessment API is available",
+            "match": {
+              "location": "features\\steps\\api.steps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9485299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I request product id 2",
+            "match": {
+              "location": "features\\steps\\api.steps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11876400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "the response status should be 200",
+            "match": {
+              "location": "features\\steps\\api.steps.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 706099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "the product id should be 2",
+            "match": {
+              "location": "features\\steps\\api.steps.js:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 344499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2325600
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "assessment-api;unknown-product-returns-404",
+        "keyword": "Scenario",
+        "line": 30,
+        "name": "Unknown product returns 404",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1773000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the assessment API is available",
+            "match": {
+              "location": "features\\steps\\api.steps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10384800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "I request product id 999",
+            "match": {
+              "location": "features\\steps\\api.steps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4674100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "the response status should be 404",
+            "match": {
+              "location": "features\\steps\\api.steps.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 110000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "the response field \"error\" should be \"Product not found\"",
+            "match": {
+              "location": "features\\steps\\api.steps.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 121399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2107700
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "assessment-api;invalid-page-parameter-returns-400",
+        "keyword": "Scenario",
+        "line": 35,
+        "name": "Invalid page parameter returns 400",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3940200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the assessment API is available",
+            "match": {
+              "location": "features\\steps\\api.steps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7168300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 36,
+            "name": "I request products with page 0",
+            "match": {
+              "location": "features\\steps\\api.steps.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7675400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "the response status should be 400",
+            "match": {
+              "location": "features\\steps\\api.steps.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 181100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "the response should contain an error message",
+            "match": {
+              "location": "features\\steps\\api.steps.js:71"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 300900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2467499
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "assessment-api;unsupported-sort-parameter-returns-400",
+        "keyword": "Scenario",
+        "line": 40,
+        "name": "Unsupported sort parameter returns 400",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1556699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the assessment API is available",
+            "match": {
+              "location": "features\\steps\\api.steps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4600799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "I request products with sort \"random_sort\"",
+            "match": {
+              "location": "features\\steps\\api.steps.js:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8243199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 42,
+            "name": "the response status should be 400",
+            "match": {
+              "location": "features\\steps\\api.steps.js:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 137200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "the response should contain an error message",
+            "match": {
+              "location": "features\\steps\\api.steps.js:71"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 61400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1601700
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "assessment-api",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Assessment API",
+    "tags": [],
+    "uri": "features\\api.feature"
+  },
+  {
+    "description": "  As a QA engineer\n  I want to validate EMI calculations and charts\n  So that the calculator produces correct financial outputs",
+    "elements": [
+      {
+        "description": "",
+        "id": "emi-calculator-validation;validate-home-loan-emi-pie-chart",
+        "keyword": "Scenario Outline",
+        "line": 16,
+        "name": "Validate Home Loan EMI pie chart",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 906599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the EMI calculator",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:12"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5002922499,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (E:\\streamhub-qa-automation-assessment\\node_modules\\@cucumber\\cucumber\\lib\\time.js:64:20)\n    at listOnTimeout (node:internal/timers:685:17)\n    at process.processTimers (node:internal/timers:618:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I select the \"Home Loan\" tab",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:19"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I enter home loan amount \"2500000\", interest rate \"10\" and tenure \"10\" years",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:23"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "the displayed EMI should match my independently calculated EMI within 2 rupees",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:31"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "the EMI pie chart should be visible",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:37"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "both pie chart values should be greater than zero",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:43"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2194409599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "emi-calculator-validation;validate-home-loan-emi-pie-chart",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Validate Home Loan EMI pie chart",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1385899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I open the EMI calculator",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4737077400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I select the \"Home Loan\" tab",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3845355800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I enter home loan amount \"5000000\", interest rate \"7.5\" and tenure \"15\" years",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1596220800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "the displayed EMI should match my independently calculated EMI within 2 rupees",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 53391199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "the EMI pie chart should be visible",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:37"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 839099,
+              "error_message": "TypeError: canvas.count is not a function\n    at CustomWorld.<anonymous> (E:\\streamhub-qa-automation-assessment\\features\\steps\\emi.steps.js:39:26)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "both pie chart values should be greater than zero",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:43"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1975627599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "emi-calculator-validation;validate-personal-loan-emi-bar-chart",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "Validate Personal Loan EMI bar chart",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1975399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 20,
+            "name": "I open the EMI calculator",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1797593200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "I select the \"Personal Loan\" tab",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1581212599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I set personal loan amount to 1000000, interest rate to 12 and tenure to 5 years",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:49"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 28799299,
+              "error_message": "Error: Unable to locate input for Home Loan Amount\n    at EmiPage.setInputNearLabel (E:\\streamhub-qa-automation-assessment\\features\\pages\\emi.page.js:44:11)\n    at async EmiPage.setLoanAmount (E:\\streamhub-qa-automation-assessment\\features\\pages\\emi.page.js:48:5)\n    at async CustomWorld.<anonymous> (E:\\streamhub-qa-automation-assessment\\features\\steps\\emi.steps.js:51:3)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "I modify the schedule start month",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:57"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "the EMI bar chart should be visible",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:69"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "the EMI bar chart should contain at least one bar",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:74"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "a bar tooltip should contain a positive numeric value",
+            "match": {
+              "location": "features\\steps\\emi.steps.js:78"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1360916800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "emi-calculator-validation",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "EMI Calculator validation",
+    "tags": [],
+    "uri": "features\\emi.feature"
+  }
+]
